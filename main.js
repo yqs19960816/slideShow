@@ -18,7 +18,7 @@ setInterval(() => {
         })
         makeCurrent($(`.images > img:nth-child(${x(n+1)})`))
     n += 1
-}, 1500)
+}, 3000)
 
 
 
