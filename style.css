@@ -28,10 +28,10 @@
 }
 /* 离开 */
 .images > img.leave {
-    transform: translateX(100%);
+    transform: translateX(-100%);
     z-index: 1;
 }
 /* 即将移入 */
 .images > img.enter {
-    transform: translateX(-100%);
+    transform: translateX(100%);
 }
