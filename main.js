@@ -11,16 +11,30 @@ function x(n) {
     }
     return n
 }
-setInterval(() => {
+timer = setInterval(() => {
     makeLeave($('.images > img:nth-child('+x(n)+')'))
         .one('transitionend', (e) => {
             makeEnter($(e.currentTarget))
         })
         makeCurrent($(`.images > img:nth-child(${x(n+1)})`))
     n += 1
-}, 3000)
+}, 2000)
 
-
+//设置页面不可见时轮播停止
+document.addEventListener('visibilitychange',function(e){
+    if(document.hidden){
+        window.clearInterval(timer);
+    }else{
+        timer = setInterval(() => {
+            makeLeave($('.images > img:nth-child('+x(n)+')'))
+                .one('transitionend', (e) => {
+                    makeEnter($(e.currentTarget))
+                })
+                makeCurrent($(`.images > img:nth-child(${x(n+1)})`))
+            n += 1
+        }, 2000)
+    }
+})
 
 
 
